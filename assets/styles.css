@@ -1,0 +1,45 @@
+/* styles.css */
+
+/* Ajusta o comprimento dos sliders */
+#grafico-interativo {
+    height: 90vh;
+    width: 90vw;
+}
+#grafico-interativo-2 {
+    height: 90vh;
+    width: 90vw;
+}
+/* Adicione estilos para a classe comum */
+.common-slider .rc-slider-rail {
+    width: auto;
+    margin: auto;
+}
+/* Adicione estilos para o Slider laranja */
+.slider-pontoA .rc-slider-rail {
+    background: linear-gradient(to right, orange, orange 0%, orange 100%);
+    width: 100%; /* Garante que a cor preencha todo o trilho */
+}
+
+.slider-pontoA .rc-slider-handle {
+    border: 2px solid orange;
+}
+
+/* Adicione estilos para o Slider azul */
+.slider-pontoB .rc-slider-rail {
+    background: linear-gradient(to right, blue, blue 0%, blue 100%);
+    width: 100%; /* Garante que a cor preencha todo o trilho */
+}
+
+.slider-pontoB .rc-slider-handle {
+    border: 2px solid blue;
+}
+
+/* Adicione estilos para o Slider preto */
+.slider-iteracoes .rc-slider-rail {
+    background: linear-gradient(to right, black, black 0%, black 100%);
+    width: 100%; /* Garante que a cor preencha todo o trilho */
+}
+
+.slider-iteracoes .rc-slider-handle {
+    border: 2px solid black;
+}
