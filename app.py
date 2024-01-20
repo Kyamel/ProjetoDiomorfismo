@@ -6,7 +6,7 @@ from layout import first_graph_layout, second_graph_layout
 app = dash.Dash(__name__)
 
 # Adiciona o layout dos graficos ao aplicativo
-app.layout = html.Div([first_graph_layout, second_graph_layout])
+app.layout = html.Div([second_graph_layout, first_graph_layout])
 
 # Adicionar o arquivo CSS local
 app.css.append_css({
