@@ -29,13 +29,14 @@ second_graph_layout = html.Div([
 
     dcc.Slider(
         id='slider-num-iteracoes-2',
-        min=0,
-        max=50,
+        min=-25,
+        max=25,
         step=1,
         value=sd.num_iteracoes_2,
-        marks={i: str(i) for i in range(0, 50, 1)},
+        marks={i: str(i) for i in range(-25, 26, 1)},
         tooltip={"placement": "bottom", "always_visible": True},  # Adiciona tooltip
-        className='slider common-slider slider-iteracoes' 
+        className='slider common-slider slider-iteracoes',
+        updatemode='drag',
     ),
 
     dcc.RadioItems(
@@ -93,13 +94,14 @@ first_graph_layout = html.Div([
 
     dcc.Slider(
         id='slider-num-iteracoes',
-        min=0,
-        max=50,
+        min=-25,
+        max=25,
         step=1,
         value=sd.num_iteracoes,
-        marks={i: str(i) for i in range(0, 50, 1)},
+        marks={i: str(i) for i in range(-25, 26, 1)},
         tooltip={"placement": "bottom", "always_visible": True},  # Adiciona tooltip
-        className='slider common-slider slider-iteracoes' 
+        className='slider common-slider slider-iteracoes',
+        updatemode='drag',
     ),
 
     dcc.RadioItems(

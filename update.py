@@ -41,15 +41,15 @@ def update_grafico_2(x2_inicial, xb2_inicial, num_iteracoes_2, selected_option='
     elif selected_option == 'circle_b':
         dados = [trace for trace in dados if 'circle' in trace['name'] or 'points_b' in trace['name']]
     elif selected_option == 'segments':
-        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'segments_b' in trace['name'] or 'f1(x)' in trace['name'] or 'y=x' in trace['name']]
+        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'segments_b' in trace['name'] or 'f1(x)' in trace['name'] or 'y=x' in trace['name'] or 'f1_inv(x)' in trace['name']]
     elif selected_option == 'segments_a':
-        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'f1(x)' in trace['name'] or 'y=x' in trace['name']]
+        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'f1(x)' in trace['name'] or 'y=x' in trace['name'] or 'f1_inv(x)' in trace['name']]
     elif selected_option == 'segments_b':
-        dados = [trace for trace in dados if 'segments_b' in trace['name'] or 'f1(x)' in trace['name'] or 'y=x' in trace['name']]
+        dados = [trace for trace in dados if 'segments_b' in trace['name'] or 'f1(x)' in trace['name'] or 'y=x' in trace['name'] or 'f1_inv(x)' in trace['name']]
     elif selected_option == 'a':
-        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'points_a' in trace['name'] or 'f1(x)' in trace['name'] or 'y=x' in trace['name'] or 'circle' in trace['name']]
+        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'points_a' in trace['name'] or 'f1(x)' in trace['name'] or 'y=x' in trace['name'] or 'circle' in trace['name'] or 'f1_inv(x)' in trace['name']]
     elif selected_option == 'b':
-        dados = [trace for trace in dados if 'segments_b' in trace['name'] or 'points_b' in trace['name'] or 'f1(x)' in trace['name'] or 'y=x' in trace['name'] or 'circle' in trace['name']]
+        dados = [trace for trace in dados if 'segments_b' in trace['name'] or 'points_b' in trace['name'] or 'f1(x)' in trace['name'] or 'y=x' in trace['name'] or 'circle' in trace['name'] or 'f1_inv(x)' in trace['name']]
     elif selected_option == '2D':
         dados = [trace for trace in dados if 'points_a' in trace['name'] or 'points_b' in trace['name'] or 'circle' in trace['name'] or "2D" in trace['name']]
     figura_2 = go.Figure(data=dados, layout=go.Layout(

@@ -1,6 +1,7 @@
 # sistemasDunamicos.py
 import numpy as np
 import cameloMath as cm
+from scipy.optimize import fsolve
 
 # >>>>>> DEFINIÇÃO DE VALORES INICIAIS <<<<<<
 n = 0.5
@@ -21,11 +22,35 @@ num_iteracoes_2 = 0
 
 # >>>>>> DEFINIÇÃO DAS FUNÇÕES MATEMÁTICAS <<<<<<
 def f1(x):
-    return x + np.pi + n * np.sin(float(2*x))
+    return x + np.pi + n * np.sin((2*x))
 def f2(x):
-    return x + n * np.sin(float(2*(x - np.pi) - 2*np.pi)) - np.pi
+    return x + n * np.sin((2*(x - np.pi) - 2*np.pi)) - np.pi
 def f3(x):
     return x + n * np.sin(x)
+
+def inverse_f3(y):
+    # Defina a função a ser resolvida: f(x) - y = 0
+    equation = lambda x: f3(x) - y
+    
+    # Adivinhe um ponto inicial para a solução
+    guess = 0.0
+    
+    # Use fsolve para encontrar a solução
+    solution = fsolve(equation, guess)
+    
+    return solution[0]  # Retorna a solução encontrada
+
+def inverse_f2(y):
+    equation = lambda x: f2(x) - y
+    guess = 0.0
+    solution = fsolve(equation, guess)
+    return solution[0]
+
+def inverse_f1(y):
+    equation = lambda x: f1(x) - y
+    guess = 0.0
+    solution = fsolve(equation, guess)
+    return solution[0]
 
 def iteracoes(x, numero_iteracoes, f1, f2, str):
     inputs = np.array([x])
@@ -38,7 +63,7 @@ def iteracoes(x, numero_iteracoes, f1, f2, str):
     print()
     print("valor inicial do", str,'é =', x )
     
-    for i in range(0, int(numero_iteracoes)):
+    for i in range(abs(numero_iteracoes)):
         inputs = np.append(inputs, x)
         
         if x < np.pi:
