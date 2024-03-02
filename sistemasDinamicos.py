@@ -2,13 +2,14 @@
 import numpy as np
 import cameloMath as cm
 from scipy.optimize import fsolve
+import definicoes as df
 
 # >>>>>> DEFINIÇÃO DE VALORES INICIAIS <<<<<<
-n = 0.5
-x_inicial = 0.0 # Valor Inicial
-x2_inicial = 0.0
-arco_ativo = False # False para não exibir arco, True para exibir
-arco_tamanho = 1.0
+n = df.n
+x_inicial = df.x_inicial # Valor Inicial
+x2_inicial = df.x2_inicial
+arco_ativo = df.arco_ativo # False para não exibir arco, True para exibir
+arco_tamanho = df.arco_tamanho
 
 if arco_ativo == True:
     xb_inicial = x_inicial + arco_tamanho
@@ -17,14 +18,14 @@ elif arco_ativo == False:
     xb_inicial = 0.0 # Valor inicial de B
     xb2_inicial = 0.0
     
-num_iteracoes = 0
-num_iteracoes_2 = 0
+num_iteracoes = df.num_iteracoes
+num_iteracoes_2 = df.num_iteracoes_2
 
 # >>>>>> DEFINIÇÃO DAS FUNÇÕES MATEMÁTICAS <<<<<<
 def f1(x):
     return x + np.pi + n * np.sin((2*x))
 def f2(x):
-    return x + n * np.sin((2*(x - np.pi) - 2*np.pi)) - np.pi
+    return x + n * np.sin((2*(x - 2*(np.pi)))) - np.pi
 def f3(x):
     return x + n * np.sin(x)
 
@@ -32,7 +33,7 @@ def inverse_f3(y):
     # Defina a função a ser resolvida: f(x) - y = 0
     equation = lambda x: f3(x) - y
     
-    # Adivinhe um ponto inicial para a solução
+    # Adivinhe um valor inicial para a solução
     guess = 0.0
     
     # Use fsolve para encontrar a solução
