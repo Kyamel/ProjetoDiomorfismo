@@ -93,6 +93,7 @@ def update_grafico_2(x_inicial, xb_inicial, num_iteracoes, selected_option='All'
 
     figura = go.Figure(data=dados, 
         layout=go.Layout(
+            
             title="Gráfico 2",
             xaxis=dict(
                 range = range,  # Intervalo do eixo x

@@ -14,10 +14,12 @@ arco_tamanho = 1.0
 # >>>>>> SLIDERS <<<<<<
 slider_max_value = 2*np.pi
 slider_min_value = 0.0
-slider_iteracoes_max_value = 26
-slider_iteracoes_min_value = -25
-slider_step = 0.01
+slider_iteracoes_max_value = 32
+slider_iteracoes_min_value = -32
+slider_valores_iniciais_step = 0.001
 slider_iteracoes_step = 1
+marks_valores_iniciais = {i: str(i) for i in np.arange(0, 2*np.pi, 1)}
+marks_iteracoes = {i: str(i) for i in range(-32, 33, 4)}
 
 # >>>>> AUTO UPDATE SLIDER <<<<<<
 interval_step = 0.05

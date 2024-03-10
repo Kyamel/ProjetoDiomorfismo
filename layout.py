@@ -2,28 +2,25 @@ from grafico import np, sd
 from dash import html, dcc
 import definicoes as df
 
-colors = {
-    'background': '#111111',
-    'text': '#7FDBFF'
-}
+blank = html.Div([
+    
+], style={'width':'100%', 'clear': 'both', 'height':'16px'})
 
-title = html.Div(style={'backgroundColor': colors['background']},
+title = html.Div(
         children=[
-            html.H1('Sistemas Dinâmicos no Hiperespaço dos contínuos e Difeomorfismo Morse-Smale',
-                style={
-                    'textAlign': 'center',
-                    'color': colors['text'],
-                    'width': '80%', 
-                    'margin-left': 'auto', 
-                    'margin-right': 'auto', 
-                    'font-family': 'Arial'
-                }
-            )
-        ])
+            html.H2('Sistemas Dinâmicos no Hiperespaço dos contínuos e Difeomorfismo Morse-Smale'),
+        ], className='title')
+
+logo = html.Div(children=[
+    html.Img(src='/assets/Logomarca_ufop.jpg', 
+             style={'width': '100%', 'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto'}
+            ),
+    ],className='logo')
 
 introdution = html.Div([
-    html.H2("Sistemas Dinâmicos no Hiperespaço dos contínuos e Difeomorfismo Morse-Smale"),
-]) 
+    html.H3("Sistemas Dinâmicos no Hiperespaço dos contínuos e Difeomorfismo Morse-Smale"),
+    
+], style={'width': '80%', 'float': 'right'})
 
 text_for_graph_1 = html.Div([
     dcc.Markdown(
@@ -31,22 +28,25 @@ text_for_graph_1 = html.Div([
         A seguir, um gráfico feito com a função: x + k \sin(x).
 
         Essa função está definida no intervalo [0, 2π) e é um homeomorfismo. 
-        Possui 2 pontos fixos, sendo π atrator e 0 repulsor. 
+        Possui 2 pontos fixos, sendo (0, π) atrator e (0, 0) repulsor. 
         Sua inversa possui os mesmos pontos fixos, porém repulsor e atrator se invertem.
-        Quando levada ao hiperespaço, outros 3 pontos fixos aparecem além de 0 e π representados por: (1, 0) e (-1, 0). 
+        Quando levada ao hiperespaço, outros 3 pontos fixos aparecem além de (0, π) e (0, 0) representados no círculo por: (1, 0) e (-1, 0). 
         São eles: A origem e os pontos (0, 0.5) e (0, -0.5).
         """,
-       style={'font-size': '16px', 'font-family': 'Arial'}
-    ), 
-], style={'width': '80%', 'margin-left': 'auto', 'float': 'left', 'margin-right': 'auto'})
+       style={'font-size': '16px', 'font-family': 'Arial', 'text-align': 'justify', 'padding': '16px'}
+    ),
+    ], className='text_for_graph_1'
+)
 
 first_graph_layout = html.Div([
+    blank,
     html.Div([
         dcc.Graph(
             id='grafico_1',
             style={'width': '100%', 'margin-left': 'auto', 'margin-right': 'auto'}
         ),
-    ], style={'width': '85%', 'float': 'left', 'margin-left': 'auto', 'margin-right': 'auto'}),
+    ],
+    className='graph'),
     html.Div([
         dcc.Dropdown(
             id='plot-selector',
@@ -82,54 +82,61 @@ first_graph_layout = html.Div([
         ),
         dcc.Input(id='auto-step-graph-1', type='number', value=0.05, step=0.001),
         html.Div(id='auto-step-graph-1-value'),
-        ], style={'width': '100%', 'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '100px', 'margin-bottom': 'auto'}),
-    ], style={'width': '15%', 'float': 'left', 'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '40px', 'margin-bottom': 'auto'}),
-
+        ], className='checklist'),
+    ],
+    className='graph_menu'),
+    blank,
     html.Div([
+        html.A("Valor inicial: A"),
         dcc.Slider(
             id='slider-x-inicial',
             min=df.slider_min_value,
             max=df.slider_max_value,
-            step=df.slider_step,
+            step=df.slider_valores_iniciais_step,
             value=sd.x_inicial,
-            marks={i: f'{i:.2f}' for i in np.arange(0, np.pi, 1)},
+            marks=df.marks_valores_iniciais,
             tooltip={"placement": "bottom", "always_visible": True},
             className='slider common-slider slider-pontoA',
             updatemode='drag',
         ),
+        html.A("Valor inicial: B"),
         dcc.Slider(
             id='slider-xb-inicial',
             min=df.slider_min_value,
             max=df.slider_max_value,
-            step=df.slider_step,
+            step=df.slider_valores_iniciais_step,
             value=sd.xb_inicial,
-            marks={i: f'{i:.2f}' for i in np.arange(0, np.pi, 1)},
+            marks=df.marks_valores_iniciais,
             tooltip={"placement": "bottom", "always_visible": True},
             className='slider common-slider slider-pontoB',
             updatemode='drag',
         ),
+        html.A("Número de iterações"),
         dcc.Slider(
             id='slider-num-iteracoes',
             min=df.slider_iteracoes_min_value,
             max=df.slider_iteracoes_max_value,
             step=df.slider_iteracoes_step,
             value=sd.num_iteracoes,
-            marks={i: str(i) for i in range(-25, 26, 1)},
+            marks=df.marks_iteracoes,
             tooltip={"placement": "bottom", "always_visible": True},
             className='slider common-slider slider-iteracoes',
             updatemode='drag',
         ),
-    ], style={'width': '100%', 'clear': 'both', 'margin-left': 'auto', 'margin-right': 'auto'}),
+    ], 
+    className='graph_slider'),
 
 ], style={'width': '100%', 'margin-left': 'auto', 'margin-right': 'auto'})
 
 second_graph_layout = html.Div([
+    blank,
     html.Div([
         dcc.Graph(
             id='grafico_2',
             style={'width': '100%', 'margin-left': 'auto', 'margin-right': 'auto'}
         ),
-    ], style={'width': '85%', 'float': 'left', 'margin-left': 'auto', 'margin-right': 'auto'}),
+    ],
+    className='graph'),
 
     html.Div([
         dcc.Dropdown(
@@ -166,47 +173,48 @@ second_graph_layout = html.Div([
         ),
         dcc.Input(id='auto-step-graph-2', type='number', value=0.05, step=0.001),
         html.Div(id='auto-step-graph-2-value'),
-        ], style={'width': '100%', 'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '100px', 'margin-bottom': 'auto'}),
-    ], style={'width': '15%', 'float': 'left', 'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '40px', 'margin-bottom': 'auto'}),
-
+        ], className='checklist'),
+    ],
+    className='graph_menu'),
+    blank,
     html.Div([
-        html.H3("Valores iniciais")
-    ],style={'width': '90%', 'clear': 'both', 'margin-left': 'auto', 'margin-right': 'auto'}),
-
-    html.Div([
+        html.A("Valor Inicial: A"),
         dcc.Slider(
             id='slider-x-inicial-2',
             min=df.slider_min_value,
             max=df.slider_max_value,
-            step=df.slider_step,
+            step=df.slider_valores_iniciais_step,
             value=sd.x_inicial,
-            marks={i: f'{i:.2f}' for i in np.arange(0, np.pi, 1)},
+            marks=df.marks_valores_iniciais,
             tooltip={"placement": "bottom", "always_visible": True},
             className='slider common-slider slider-pontoA',
             updatemode='drag',
         ),
+        html.A("Valor Inicial: B"),
         dcc.Slider(
             id='slider-xb-inicial-2',
             min=df.slider_min_value,
             max=df.slider_max_value,
-            step=df.slider_step,
+            step=df.slider_valores_iniciais_step,
             value=sd.xb_inicial,
-            marks={i: f'{i:.2f}' for i in np.arange(0, np.pi, 1)},
+            marks=df.marks_valores_iniciais,
             tooltip={"placement": "bottom", "always_visible": True},
             className='slider common-slider slider-pontoB',
             updatemode='drag',
         ),
+        html.A("Numero de iterações"),
         dcc.Slider(
             id='slider-num-iteracoes-2',
             min=df.slider_iteracoes_min_value,
             max=df.slider_iteracoes_max_value,
             step=df.slider_iteracoes_step,
             value=sd.num_iteracoes,
-            marks={i: str(i) for i in range(-25, 26, 1)},
+            marks=df.marks_iteracoes,
             tooltip={"placement": "bottom", "always_visible": True},
             className='slider common-slider slider-iteracoes',
             updatemode='drag',
         ),
-    ], style={'width': '100%', 'clear': 'both', 'margin-left': 'auto', 'margin-right': 'auto'}),
+    ],
+    className='graph_slider'),
 
 ], style={'width': '100%', 'margin-left': 'auto', 'margin-right': 'auto'})
