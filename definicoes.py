@@ -4,8 +4,10 @@ import numpy as np
 n = 0.5
 x_inicial = 0.0 # Valor Inicial
 x2_inicial = 0.0
+xu_inicial = 0.0
 num_iteracoes = 0
 num_iteracoes_2 = 0
+num_intervals_u = 0
 
 # >>>>>> NÂO IMPLEMENTADO <<<<<<
 arco_ativo = False # False para não exibir arco, True para exibir
@@ -24,6 +26,7 @@ marks_iteracoes = {i: str(i) for i in range(-32, 33, 4)}
 # >>>>> AUTO UPDATE SLIDER <<<<<<
 interval_step = 0.05
 interval_step_2 = 0.05
+intervval_step_u = 0.05
 interval_time = 100 #milisegundos
 num_intervals = 0
 

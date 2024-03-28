@@ -1,4 +1,4 @@
-from grafico import np, sd
+from grafico_dados import np, sd
 from dash import html, dcc
 import definicoes as df
 
@@ -25,18 +25,33 @@ introdution = html.Div([
 text_for_graph_1 = html.Div([
     dcc.Markdown(
         """
-        A seguir, um gráfico feito com a função: x + k \sin(x).
+        A seguir, um gráfico feito com a função: x + k * sin(x).
 
         Essa função está definida no intervalo [0, 2π) e é um homeomorfismo. 
-        Possui 2 pontos fixos, sendo (0, π) atrator e (0, 0) repulsor. 
+        Possui 2 pontos fixos, sendo (π, π) atrator e (0, 0) repulsor. 
         Sua inversa possui os mesmos pontos fixos, porém repulsor e atrator se invertem.
-        Quando levada ao hiperespaço, outros 3 pontos fixos aparecem além de (0, π) e (0, 0) representados no círculo por: (1, 0) e (-1, 0). 
+        Quando levada ao hiperespaço, outros 3 pontos fixos aparecem além de (π, 0) e (0, 0) representados no círculo por: (-1, 0) e (1, 0). 
         São eles: A origem e os pontos (0, 0.5) e (0, -0.5).
         """,
        style={'font-size': '16px', 'font-family': 'Arial', 'text-align': 'justify', 'padding': '16px'}
     ),
-    ], className='text_for_graph_1'
+    ], className='text_for_graph'
 )
+
+text_for_graph_2 = html.Div([
+    dcc.Markdown(
+        """
+        A seguir, um gráfico feito com a função defina em partes: x + π + k * sin(2x) para (0, π) e x + k * sin(2(x - 2(sin(π)))) - π para (π, 2π)
+
+        Esse também é um exemplo de homeomorfismo. Nesse caso a inversa é exatamente igual a função.
+        Temos pontos fixo e atratores em (π/2, 3π/2) e (3π/2, π/2). 
+        Note como os pontos são atrídos para um desses 2 pontos atratores de maneira periódioca (número de iterações ímpares são atraídos por (π/2, 3π/2) e números de iterações pares por (3π/2, π/2))
+        Pontos repulsores são (0, 0)  e (π, π).
+        """,
+       style={'font-size': '16px', 'font-family': 'Arial', 'text-align': 'justify', 'padding': '16px'}
+
+    )
+], className='text_for_graph')
 
 first_graph_layout = html.Div([
     blank,
@@ -72,6 +87,8 @@ first_graph_layout = html.Div([
             interval=df.interval_time,
             n_intervals=df.num_intervals
         ),
+        html.Div([], className='userFuncBox'),
+        blank,
         html.Div([
         dcc.Checklist(
             id='auto-update-slider',
@@ -163,6 +180,8 @@ second_graph_layout = html.Div([
             interval=df.interval_time,
             n_intervals=df.num_intervals
         ),
+        html.Div([], className='userFuncBox'),
+        blank,
         html.Div([
         dcc.Checklist(
             id='auto-update-slider-2',

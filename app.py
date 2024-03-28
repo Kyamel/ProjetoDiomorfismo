@@ -1,32 +1,42 @@
 import dash
-from dash import html
-import layout
+from dash import html, dcc, Input, Output
 import callbacks as cb
 import comentarios
-app = dash.Dash(__name__, external_stylesheets=['/assets/styles.css'])
+import pages
+import sistemasDinamicos as sd
+app = dash.Dash(__name__, external_stylesheets=['/assets/styles.css'], suppress_callback_exceptions=True)
 
 disqus_script = comentarios.disqus_script
 
 # Adiciona o layout dos graficos ao aplicativo
-app.layout = html.Div(children=[
-    layout.title,
-    layout.logo,
-    layout.introdution,
-    layout.text_for_graph_1,
-    layout.first_graph_layout,
-    layout.second_graph_layout,
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div(id='page-content'),
+    html.Nav([
+        dcc.Link('Home Page.', href='/home_page'),
+        dcc.Link('Sandbox Page.', href='/sandbox_page'),
+    ]),
+])
 
-    html.Div([html.Script(disqus_script)])
-    ], 
-    className='graph_page'
-)
+# Callback para alterar página
+@app.callback(Output('page-content', 'children'),
+              [Input('url', 'pathname')])
 
-# Callback para atualizar o gráfico com base nos sliders
+def display_page(pathname):
+    # Determina qual layout será exibido
+    if pathname is None or pathname == "/":
+        layout = pages.home_page_layout()
+    elif pathname == '/home_page':
+        layout = pages.home_page_layout()
+    elif pathname == '/sandbox_page':
+        layout = pages.sandbox_page_layout()
+    else:
+        layout = '404 - Página não encontrada'
+    return layout
 
+cb.register_graph_callback(app)
 cb.register_auto_slider_callback(app)
-cb.register_grafico_callback(app)
 cb.register_enter_step_callback(app)
-#cb.register_graph_scale_callback(app)
 
 # Executar a aplicação
 if __name__ == '__main__':

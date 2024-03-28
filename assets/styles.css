@@ -63,7 +63,7 @@
     width: 8%;
     float: right;
 }
-.text_for_graph_1 {
+.text_for_graph {
     background-color: #f0f0f0;
     border-radius: 10px;
     width: 80%;
@@ -99,15 +99,22 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
-    margin-bottom: auto;
+    margin-bottom: 64px;
     padding: 16px;
 }
 .checklist{
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100%;
+    margin-top: auto;
     margin-bottom: auto;
+}
+
+.userFuncBox{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 75%;
 }
 /* >>>>>> VISUALIZAÇÂO DINÂMICA <<<<<< */
 @media only screen and (max-width: 600px) {

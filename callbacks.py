@@ -1,6 +1,7 @@
 from dash.dependencies import Input, Output, State
 import definicoes as df
 import update
+import sistemasDinamicos as sd
 
 def register_auto_slider_callback(app):
 
@@ -40,8 +41,27 @@ def register_auto_slider_callback(app):
     )
     def update_sliders_2(auto_update_value, n_intervals, x, xb):
         return update.update_sliders_2(auto_update_value, n_intervals, x, xb)
+    
+    @app.callback(
+        [
+            Output('slider-x-inicial-u', 'value'),
+            Output('slider-xb-inicial-u', 'value'),
+            Output('interval-component-u', 'disabled'),
+        ],
+        [
+            Input('auto-update-slider-u', 'value'),
+            Input('interval-component-u', 'n_intervals'),
+        ],
+        [
+            State('slider-x-inicial-u', 'value'),
+            State('slider-xb-inicial-u', 'value'),
+        ],
+        prevent_initial_call=True
+    )
+    def update_sliders_u(auto_update_value, n_intervals, x, xb):
+        return update.update_sliders_u(auto_update_value, n_intervals, x, xb)
 
-def register_grafico_callback(app):
+def register_graph_callback(app):
 
     @app.callback(
         Output('grafico_1', 'figure'),
@@ -66,8 +86,24 @@ def register_grafico_callback(app):
         ],
         prevent_initial_call=False,
     )
-    def update_grafico_2_callback(x2_inicial, xb2_inicial, num_iteracoes_2, selected_option='All'):
-        return update.update_grafico_2(x2_inicial, xb2_inicial, num_iteracoes_2, selected_option)
+    def update_grafico_2_callback(xu_inicial, xbu_inicial, num_iteracoes_u, selected_option='All'):
+        return update.update_grafico_2(xu_inicial, xbu_inicial, num_iteracoes_u, selected_option)
+    
+    @app.callback(
+        Output('grafico_user', 'figure'),
+        Output('output-user-func', 'children'),
+        [
+            Input('slider-x-inicial-u', 'value'),
+            Input('slider-xb-inicial-u', 'value'),
+            Input('slider-num-iteracoes-u', 'value'),
+            Input('user-func', 'value'),
+            Input('plot-selector-u', 'value'),
+        ],
+        prevent_initial_call=False,
+    )
+    def update_grafico_u_callback(x2_inicial, xb2_inicial, num_iteracoes_2, funcStr, selected_option='All'):
+        func = sd.string_to_function(funcStr)
+        return update.update_grafico_u(x2_inicial, xb2_inicial, num_iteracoes_2, func, selected_option), f'Função digitada: {funcStr}'
     
 def register_enter_step_callback(app):
    @app.callback(
@@ -82,5 +118,5 @@ def register_enter_step_callback(app):
    def update_output(value_1, value_2):
         df.interval_step = value_1
         df.interval_step_2 = value_2 
-        return f'Valor do incremento: {value_1}', f'Valor do incremento: {value_2}', 
+        return f'Valor do incremento: {value_1}', f'Valor do incremento: {value_2}'
    

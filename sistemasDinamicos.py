@@ -3,23 +3,29 @@ import numpy as np
 import cameloMath as cm
 from scipy.optimize import fsolve
 import definicoes as df
+import sympy as sp
+
 
 # >>>>>> DEFINIÇÃO DE VALORES INICIAIS <<<<<<
 n = df.n
 x_inicial = df.x_inicial # Valor Inicial
 x2_inicial = df.x2_inicial
+xu_inicial = df.xu_inicial
 arco_ativo = df.arco_ativo # False para não exibir arco, True para exibir
 arco_tamanho = df.arco_tamanho
 
 if arco_ativo == True:
     xb_inicial = x_inicial + arco_tamanho
     xb2_inicial = x2_inicial + arco_tamanho
+    xbu_inicial = xu_inicial + arco_tamanho
 elif arco_ativo == False:
     xb_inicial = 0.0 # Valor inicial de B
     xb2_inicial = 0.0
+    xbu_inicial = 0.0
     
 num_iteracoes = df.num_iteracoes
 num_iteracoes_2 = df.num_iteracoes_2
+num_iteracoes_u = df.num_intervals_u
 
 # >>>>>> DEFINIÇÃO DAS FUNÇÕES MATEMÁTICAS <<<<<<
 def f1(x):
@@ -28,6 +34,31 @@ def f2(x):
     return x + n * np.sin((2*(x - 2*(np.pi)))) - np.pi
 def f3(x):
     return x + n * np.sin(x)
+
+def string_to_function(string):
+    x = sp.symbols('x')  # Define a variável simbólica x
+    expr = sp.sympify(string)  # Converte a string em uma expressão sympy
+    func = sp.lambdify(x, expr, modules=['numpy'])  # Converte a expressão sympy em uma função Python
+    return func
+
+def UserFunc(func):
+    return func
+
+def CalculateUserFunc(x, userFunc):
+    return userFunc(x)
+
+def inverse_UserFunc(y, func):
+    # Defina a função a ser resolvida: f(x) - y = 0
+    equation = lambda x: CalculateUserFunc(x, func) - y 
+    
+    # Adivinhe um valor inicial para a solução
+    guess = 0.0
+    
+    # Use fsolve para encontrar a solução
+    solution = fsolve(equation, guess)
+    
+    return solution[0]  # Retorna a solução encontrada
+
 
 def inverse_f3(y):
     # Defina a função a ser resolvida: f(x) - y = 0
