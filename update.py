@@ -1,8 +1,8 @@
-from grafico_dados import gerar_dados, gerar_dados_2, gerar_dados_user, go
+from graph_data import gerar_dados, gerar_dados_2, gerar_dados_user, go
 import definicoes as df
 
 def update_grafico(x2_inicial, xb2_inicial, num_iteracoes_2, selected_option='All'):
-    dados = gerar_dados_2(x2_inicial, xb2_inicial, num_iteracoes_2)
+    dados = gerar_dados(x2_inicial, xb2_inicial, num_iteracoes_2)
     range = df.all_scale
 
     if selected_option == 'circle':
@@ -32,7 +32,7 @@ def update_grafico(x2_inicial, xb2_inicial, num_iteracoes_2, selected_option='Al
         dados = [trace for trace in dados if 'segments_b' in trace['name'] or 'points_b' in trace['name'] or 'f1(x)' in trace['name'] or 'y=x' in trace['name'] or 'circle' in trace['name'] or 'f1_inv(x)' in trace['name']]
     elif selected_option == '2D':
         range = df.circle_scale
-        dados = [trace for trace in dados if 'circle' in trace['name'] or "2D" in trace['name']]
+        dados = [trace for trace in dados if 'circle' in trace['name'] or "2D" in trace['name'] or 'arc' in trace['name']]
     figura_2 = go.Figure(data=dados, 
         layout=go.Layout(
             title="Gráfico 1",
@@ -54,7 +54,7 @@ def update_grafico(x2_inicial, xb2_inicial, num_iteracoes_2, selected_option='Al
 
     
 def update_grafico_2(x_inicial, xb_inicial, num_iteracoes, selected_option='All'):
-    dados = gerar_dados(x_inicial, xb_inicial, num_iteracoes)
+    dados = gerar_dados_2(x_inicial, xb_inicial, num_iteracoes)
     range = df.all_scale
 
     if selected_option == 'circle':
@@ -87,9 +87,7 @@ def update_grafico_2(x_inicial, xb_inicial, num_iteracoes, selected_option='All'
         dados = [trace for trace in dados if 'segments_b' in trace['name'] or 'points_b' in trace['name'] or 'f1(x)' in trace['name'] or 'f2(x)' in trace['name'] or 'y=x' in trace['name'] or 'circle' in trace['name']]
     elif selected_option == '2D':
         range = df.circle_scale
-        dados = [trace for trace in dados if 'circle' in trace['name'] or "2D" in trace['name']]
-
-    
+        dados = [trace for trace in dados if 'circle' in trace['name'] or "2D" in trace['name'] or 'arc' in trace['name']]
 
     figura = go.Figure(data=dados, 
         layout=go.Layout(

@@ -3,7 +3,7 @@ from dash import html, dcc, Input, Output
 import callbacks as cb
 import comentarios
 import pages
-import sistemasDinamicos as sd
+
 app = dash.Dash(__name__, external_stylesheets=['/assets/styles.css'], suppress_callback_exceptions=True)
 
 disqus_script = comentarios.disqus_script
@@ -34,6 +34,8 @@ def display_page(pathname):
         layout = '404 - Página não encontrada'
     return layout
 
+cb.register_activate_arc_callback(app)
+cb.reister_arc_size(app)
 cb.register_graph_callback(app)
 cb.register_auto_slider_callback(app)
 cb.register_enter_step_callback(app)

@@ -126,7 +126,7 @@ def hiperespaco(arc, str):
     angulos_absolute = np.empty(len(arc))
 
     # arcsin funciona enquanto o angulo for menor que 90° e o Ponto A estiver na origem (1,0)
-    # arco que começa do ponto A e termina no Ponto B pelo sentido anti_hotário
+    # arco que começa do ponto A e termina no Ponto B pelo sentido anti_horário
     for i, arc_instance in enumerate(arc):
         alpha[i] = arc_instance.begin_angle()
         bheta[i] = arc_instance.end_angle()

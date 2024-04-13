@@ -16,17 +16,17 @@
 }
 /* Adicione estilos para o Slider laranja */
 .slider-pontoA .rc-slider-rail {
-    background: linear-gradient(to right, orange, orange 0%, orange 100%);
+    background: linear-gradient(to right, red, red 0%, red 100%);
     width: 100%; /* Garante que a cor preencha todo o trilho */
 }
 
 .slider-pontoA .rc-slider-handle {
-    border: 2px solid orange;
+    border: 2px solid red;
 }
 
 /* Adicione estilos para o Slider azul */
 .slider-pontoB .rc-slider-rail {
-    background: linear-gradient(to right, blue, blue 0%, blue 100%);
+    background: linear-gradient(to right, orange, orange 0%, orange 100%);
     width: 100%; /* Garante que a cor preencha todo o trilho */
 }
 
@@ -58,6 +58,7 @@
     width: 80%;
     border-radius: 10px;
     float: left;
+    margin-left: 5%;
 }
 .logo{
     width: 8%;
@@ -73,7 +74,7 @@
 }
 .graph{
     width: 60%;
-    margin-left: 5%;
+    margin-left: 10%;
     margin-top: 10px;
     border-radius: 10px;
     float: left; 
@@ -83,12 +84,12 @@
 .graph_menu{
     background-color: rgb(255, 236, 255);
     border-radius: 10px;
-    width: 20%;
+    width: 25%;
     float: right; 
-    margin-left: 10%;
-    margin-right: auto;
+    margin-left: auto;
+    margin-right: 5%;
     margin-bottom: auto;
-    margin-top: 40px;
+    margin-top: 50px;
     padding: 16px;
 }
 .graph_slider{
@@ -114,7 +115,7 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 75%;
+    margin-top: auto;
 }
 /* >>>>>> VISUALIZAÇÂO DINÂMICA <<<<<< */
 @media only screen and (max-width: 600px) {

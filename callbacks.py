@@ -1,7 +1,36 @@
-from dash.dependencies import Input, Output, State
+from dash import Input, Output, State, html
 import definicoes as df
 import update
 import sistemasDinamicos as sd
+
+def register_activate_arc_callback(app):
+
+    @app.callback(
+    Output('slider-xb-container', 'style'),
+    [Input('activate-arc-1', 'value')],
+    prevent_initial_call=True
+    )
+    def update_arc_status(value):
+        if 'activate-arc' in value:
+            df.arco_ativo = True
+            return {'display': 'none'}
+        else:
+            df.arco_ativo = False
+            return {'display': 'block'}
+
+# Não usado
+def reister_arc_size(app):
+    @app.callback(
+        [
+            Output('arc1-size-display', 'children'),
+        ],
+        [
+            Input('arc1-size-input', 'value'),
+        ],
+    )
+    def update_arc(value):
+        df.arco_tamanho = value
+        return [f'Tamanho do arco: {value}']
 
 def register_auto_slider_callback(app):
 
@@ -23,6 +52,7 @@ def register_auto_slider_callback(app):
     )
     def update_sliders(auto_update_value, n_intervals,x, xb):
         return update.update_sliders(auto_update_value, n_intervals, x, xb)
+     
     @app.callback(
         [
             Output('slider-x-inicial-2', 'value'),
@@ -74,6 +104,8 @@ def register_graph_callback(app):
         prevent_initial_call=False,
     )
     def update_grafico_callback(x_inicial, xb_inicial, num_iteracoes, selected_option='All'):
+        if(df.arco_ativo == True):
+            xb_inicial = x_inicial + df.arco_tamanho   
         return update.update_grafico(x_inicial, xb_inicial, num_iteracoes, selected_option)
 
     @app.callback(

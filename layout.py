@@ -1,4 +1,4 @@
-from grafico_dados import np, sd
+from graph_data import np, sd
 from dash import html, dcc
 import definicoes as df
 
@@ -87,7 +87,22 @@ first_graph_layout = html.Div([
             interval=df.interval_time,
             n_intervals=df.num_intervals
         ),
-        html.Div([], className='userFuncBox'),
+        blank,
+        blank,
+        blank,
+        html.Div([
+            dcc.Checklist(
+                id='activate-arc-1',
+                options=[
+                    {'label': 'Ativar arco', 'value': 'activate-arc'}
+                ]
+            ),
+            html.Div(id='status-message-arc-1')  # Div para exibir o status do arco
+        ]),
+        html.Div([
+            dcc.Input(id='arc1-size-input', type='number', value=1, step=0.01),
+            html.Div(id='arc1-size-display'),
+        ]),
         blank,
         html.Div([
         dcc.Checklist(
@@ -116,18 +131,20 @@ first_graph_layout = html.Div([
             className='slider common-slider slider-pontoA',
             updatemode='drag',
         ),
-        html.A("Valor inicial: B"),
-        dcc.Slider(
-            id='slider-xb-inicial',
-            min=df.slider_min_value,
-            max=df.slider_max_value,
-            step=df.slider_valores_iniciais_step,
-            value=sd.xb_inicial,
-            marks=df.marks_valores_iniciais,
-            tooltip={"placement": "bottom", "always_visible": True},
-            className='slider common-slider slider-pontoB',
-            updatemode='drag',
-        ),
+        html.Div(id='slider-xb-container', children=[
+            html.A("Valor inicial: B"),
+            dcc.Slider(
+                id='slider-xb-inicial',
+                min=df.slider_min_value,
+                max=df.slider_max_value,
+                step=df.slider_valores_iniciais_step,
+                value=sd.xb_inicial,
+                marks=df.marks_valores_iniciais,
+                tooltip={"placement": "bottom", "always_visible": True},
+                className='slider common-slider slider-pontoB',
+                updatemode='drag',
+            ),
+        ], style={'display': 'block'}),
         html.A("Número de iterações"),
         dcc.Slider(
             id='slider-num-iteracoes',
@@ -180,7 +197,8 @@ second_graph_layout = html.Div([
             interval=df.interval_time,
             n_intervals=df.num_intervals
         ),
-        html.Div([], className='userFuncBox'),
+        blank,
+        blank,
         blank,
         html.Div([
         dcc.Checklist(
