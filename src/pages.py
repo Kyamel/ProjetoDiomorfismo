@@ -2,7 +2,7 @@ from dash import html
 import layout
 import sandboxPageLayout as spl
 
-def home_page_layout():
+def home_page_layout() -> html.Div:
     return html.Div(children=[
     layout.title,
     layout.logo,
@@ -14,7 +14,7 @@ def home_page_layout():
     ], 
     className='graph_page')
 
-def sandbox_page_layout():
+def sandbox_page_layout() -> html.Div:
     return html.Div(children=[
         # Conteúdo da página 2 aqui
         html.H1('Página 2'),

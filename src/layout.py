@@ -1,6 +1,6 @@
 from graph_data import np, sd
 from dash import html, dcc
-import definicoes as df
+import definitions as df
 
 blank = html.Div([
     

@@ -1,12 +1,9 @@
 from graph_data import gerar_dados, gerar_dados_2, gerar_dados_user, go
-import definicoes as df
+import definitions as df
 
-def update_grafico(x2_inicial, xb2_inicial, num_iteracoes_2, selected_option='All'):
-    dados = gerar_dados(x2_inicial, xb2_inicial, num_iteracoes_2)
+def selectTraces(dados: tuple, selected_option: str) -> tuple[tuple, tuple]:
     range = df.all_scale
-
     if selected_option == 'circle':
-        # Remova todos os traços, exceto o do círculo
         range = df.circle_scale
         dados = [trace for trace in dados if 'circle' in trace['name'] or 'points_a' in trace['name'] or 'points_b' in trace['name']]
     elif selected_option == 'circle_a':
@@ -33,7 +30,12 @@ def update_grafico(x2_inicial, xb2_inicial, num_iteracoes_2, selected_option='Al
     elif selected_option == '2D':
         range = df.circle_scale
         dados = [trace for trace in dados if 'circle' in trace['name'] or "2D" in trace['name'] or 'arc' in trace['name']]
-    figura_2 = go.Figure(data=dados, 
+    return dados, range
+
+def update_grafico(x2_inicial: float, xb2_inicial: float, num_iteracoes_2: int, selected_option='All') -> go.Figure:
+    dados = gerar_dados(x2_inicial, xb2_inicial, num_iteracoes_2)
+    dados, range = selectTraces(dados, selected_option)  
+    figura = go.Figure(data=dados, 
         layout=go.Layout(
             title="Gráfico 1",
             xaxis=dict(
@@ -48,47 +50,13 @@ def update_grafico(x2_inicial, xb2_inicial, num_iteracoes_2, selected_option='Al
             ),
             margin=dict(l=0, r=0, t=40, b=40),
         )
-    ) 
-                        
-    return figura_2
+    )                     
+    return figura
 
     
-def update_grafico_2(x_inicial, xb_inicial, num_iteracoes, selected_option='All'):
+def update_grafico_2(x_inicial: float, xb_inicial: float, num_iteracoes: int, selected_option='All') -> go.Figure:
     dados = gerar_dados_2(x_inicial, xb_inicial, num_iteracoes)
-    range = df.all_scale
-
-    if selected_option == 'circle':
-        # Remova todos os traços, exceto o do círculo
-        dados = [trace for trace in dados if 'circle' in trace['name'] or 'points_a' in trace['name'] or 'points_b' in trace['name']]
-        range = df.circle_scale
-    elif selected_option == 'circle_a':
-        dados = [trace for trace in dados if 'circle' in trace['name'] or 'points_a' in trace['name']]
-        range = df.circle_scale
-    elif selected_option == 'circle_b':
-        dados = [trace for trace in dados if 'circle' in trace['name'] or 'points_b' in trace['name']]
-        range = df.circle_scale
-    elif selected_option == 'segments':
-        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'segments_b' in trace['name'] or 'f1(x)' in trace['name']
-                  or 'f2(x)' in trace['name'] or 'y=x' in trace['name']]
-        range = df.segment_scale
-    elif selected_option == 'segments_a':
-        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'f1(x)' in trace['name']
-                  or 'f2(x)' in trace['name'] or 'y=x' in trace['name']]
-        range = df.segment_scale
-    elif selected_option == 'segments_b':
-        dados = [trace for trace in dados if 'segments_b' in trace['name'] or
-                  'f1(x)' in trace['name'] or 'f2(x)' in trace['name'] or 'y=x' in trace['name']]
-        range = df.segment_scale
-    elif selected_option == 'a':
-        range = df.all_scale
-        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'points_a' in trace['name'] or 'f1(x)' in trace['name'] or 'f2(x)' in trace['name'] or 'y=x' in trace['name'] or 'circle' in trace['name']]
-    elif selected_option == 'b':
-        range = df.all_scale
-        dados = [trace for trace in dados if 'segments_b' in trace['name'] or 'points_b' in trace['name'] or 'f1(x)' in trace['name'] or 'f2(x)' in trace['name'] or 'y=x' in trace['name'] or 'circle' in trace['name']]
-    elif selected_option == '2D':
-        range = df.circle_scale
-        dados = [trace for trace in dados if 'circle' in trace['name'] or "2D" in trace['name'] or 'arc' in trace['name']]
-
+    dados, range = selectTraces(dados, selected_option)
     figura = go.Figure(data=dados, 
         layout=go.Layout(
             
@@ -105,46 +73,12 @@ def update_grafico_2(x_inicial, xb_inicial, num_iteracoes, selected_option='All'
             ),
             margin=dict(l=0, r=0, t=40, b=40),
         )
-    )
-                        
+    )                    
     return figura
 
-def update_grafico_u(x_inicial, xb_inicial, num_iteracoes, func, selected_option='All'):
+def update_grafico_u(x_inicial: float, xb_inicial: float, num_iteracoes: float, func, selected_option='All') -> go.Figure:
     dados = gerar_dados_user(x_inicial, xb_inicial, num_iteracoes, func)
-    range = df.all_scale
-
-    if selected_option == 'circle':
-        # Remova todos os traços, exceto o do círculo
-        dados = [trace for trace in dados if 'circle' in trace['name'] or 'points_a' in trace['name'] or 'points_b' in trace['name']]
-        range = df.circle_scale
-    elif selected_option == 'circle_a':
-        dados = [trace for trace in dados if 'circle' in trace['name'] or 'points_a' in trace['name']]
-        range = df.circle_scale
-    elif selected_option == 'circle_b':
-        dados = [trace for trace in dados if 'circle' in trace['name'] or 'points_b' in trace['name']]
-        range = df.circle_scale
-    elif selected_option == 'segments':
-        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'segments_b' in trace['name'] or 'f1(x)' in trace['name']
-                  or 'f2(x)' in trace['name'] or 'y=x' in trace['name']]
-        range = df.segment_scale
-    elif selected_option == 'segments_a':
-        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'f1(x)' in trace['name']
-                  or 'f2(x)' in trace['name'] or 'y=x' in trace['name']]
-        range = df.segment_scale
-    elif selected_option == 'segments_b':
-        dados = [trace for trace in dados if 'segments_b' in trace['name'] or
-                  'f1(x)' in trace['name'] or 'f2(x)' in trace['name'] or 'y=x' in trace['name']]
-        range = df.segment_scale
-    elif selected_option == 'a':
-        range = df.all_scale
-        dados = [trace for trace in dados if 'segments_a' in trace['name'] or 'points_a' in trace['name'] or 'f1(x)' in trace['name'] or 'f2(x)' in trace['name'] or 'y=x' in trace['name'] or 'circle' in trace['name']]
-    elif selected_option == 'b':
-        range = df.all_scale
-        dados = [trace for trace in dados if 'segments_b' in trace['name'] or 'points_b' in trace['name'] or 'f1(x)' in trace['name'] or 'f2(x)' in trace['name'] or 'y=x' in trace['name'] or 'circle' in trace['name']]
-    elif selected_option == '2D':
-        range = df.circle_scale
-        dados = [trace for trace in dados if 'circle' in trace['name'] or "2D" in trace['name']]
-
+    dados, range = selectTraces(dados, selected_option)
     figura = go.Figure(data=dados, 
         layout=go.Layout(
             
@@ -161,11 +95,10 @@ def update_grafico_u(x_inicial, xb_inicial, num_iteracoes, func, selected_option
             ),
             margin=dict(l=0, r=0, t=40, b=40),
         )
-    )
-                        
+    )                    
     return figura
 
-def update_sliders(auto_update_value, _, x, xb):
+def update_sliders(auto_update_value: str, _, x: float, xb: float) -> tuple[float, float, bool]:
 
     if 'auto-update' in auto_update_value:
         # Lógica para atualizar gradualmente os valores dos sliders
@@ -190,7 +123,7 @@ def update_sliders(auto_update_value, _, x, xb):
     else:
         return x, xb, True
 
-def update_sliders_2(auto_update_value, _, x, xb):
+def update_sliders_2(auto_update_value: str, _, x: float, xb: float) -> tuple[float, float, bool]:
     if 'auto-update' in auto_update_value:
         # Lógica para atualizar gradualmente os valores dos sliders
         max_value = df.slider_max_value
@@ -214,7 +147,7 @@ def update_sliders_2(auto_update_value, _, x, xb):
     else:
         return x, xb, True
     
-def update_sliders_u(auto_update_value, _, x, xb):
+def update_sliders_u(auto_update_value: str, _, x: float, xb: float) -> tuple[float, float, bool]:
     if 'auto-update' in auto_update_value:
         # Lógica para atualizar gradualmente os valores dos sliders
         max_value = df.slider_max_value

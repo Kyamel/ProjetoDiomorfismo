@@ -2,7 +2,7 @@
 import numpy as np
 import cameloMath as cm
 from scipy.optimize import fsolve
-import definicoes as df
+import definitions as df
 import sympy as sp
 
 
@@ -28,14 +28,14 @@ num_iteracoes_2 = df.num_iteracoes_2
 num_iteracoes_u = df.num_intervals_u
 
 # >>>>>> DEFINIÇÃO DAS FUNÇÕES MATEMÁTICAS <<<<<<
-def f1(x):
+def f1(x: float) -> float:
     return x + np.pi + n * np.sin((2*x))
-def f2(x):
+def f2(x: float) -> float:
     return x + n * np.sin((2*(x - 2*(np.pi)))) - np.pi
 def f3(x):
     return x + n * np.sin(x)
 
-def string_to_function(string):
+def string_to_function(string: str):
     x = sp.symbols('x')  # Define a variável simbólica x
     expr = sp.sympify(string)  # Converte a string em uma expressão sympy
     func = sp.lambdify(x, expr, modules=['numpy'])  # Converte a expressão sympy em uma função Python
@@ -44,10 +44,10 @@ def string_to_function(string):
 def UserFunc(func):
     return func
 
-def CalculateUserFunc(x, userFunc):
+def CalculateUserFunc(x: float, userFunc):
     return userFunc(x)
 
-def inverse_UserFunc(y, func):
+def inverse_UserFunc(y: float, func) -> float:
     # Defina a função a ser resolvida: f(x) - y = 0
     equation = lambda x: CalculateUserFunc(x, func) - y 
     
@@ -60,7 +60,7 @@ def inverse_UserFunc(y, func):
     return solution[0]  # Retorna a solução encontrada
 
 
-def inverse_f3(y):
+def inverse_f3(y: float) -> float:
     # Defina a função a ser resolvida: f(x) - y = 0
     equation = lambda x: f3(x) - y
     
@@ -72,19 +72,23 @@ def inverse_f3(y):
     
     return solution[0]  # Retorna a solução encontrada
 
-def inverse_f2(y):
+def inverse_f2(y: float) -> float:
     equation = lambda x: f2(x) - y
     guess = 0.0
     solution = fsolve(equation, guess)
     return solution[0]
 
-def inverse_f1(y):
+def inverse_f1(y: float) -> float:
     equation = lambda x: f1(x) - y
     guess = 0.0
     solution = fsolve(equation, guess)
     return solution[0]
 
-def iteracoes(x, numero_iteracoes, f1, f2, str):
+def iteracoes(x: float,
+            numero_iteracoes: int,
+            f1, f2,
+            str: list[str]) -> tuple[np.array, np.array, np.array, np.array, list[str]]:
+    
     inputs = np.array([x])
     outputs = np.array([0])
     labels = []
@@ -92,7 +96,6 @@ def iteracoes(x, numero_iteracoes, f1, f2, str):
     yc = np.array([np.sin(x)])
     labels.append(f'Ponto 0')  # Adiciona rótulo ao ponto
     
-    print()
     print("valor inicial do", str,'é =', x )
     
     for i in range(abs(numero_iteracoes)):
@@ -115,11 +118,11 @@ def iteracoes(x, numero_iteracoes, f1, f2, str):
     inputs = inputs[:-1]
     outputs = outputs[:-1]
 
-    print(f"valor da {numero_iteracoes}ª iteracao do {str} é = {x}", end="\n")
+    print(f"valor da {numero_iteracoes}ª iteracao do {str} é = {x}")
 
     return inputs, outputs, xc, yc, labels
 
-def hiperespaco(arc, str):
+def hiperespaco(arc: cm.ArcOfCircle, str: list[str]) -> cm.MultiPoint:
 
     alpha = np.empty(len(arc))
     bheta = np.empty(len(arc))
@@ -145,5 +148,6 @@ def hiperespaco(arc, str):
 
     print("valores no hiperespaco dos Pontos", str, 'são =')
     print(pontos_hiperespaco)
+    print(50*'#')
 
     return pontos_hiperespaco

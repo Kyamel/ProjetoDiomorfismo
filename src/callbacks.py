@@ -1,5 +1,5 @@
 from dash import Input, Output, State, html
-import definicoes as df
+import definitions as df
 import update
 import sistemasDinamicos as sd
 
@@ -18,8 +18,7 @@ def register_activate_arc_callback(app):
             df.arco_ativo = False
             return {'display': 'block'}
 
-# Não usado
-def reister_arc_size(app):
+def reister_arc_size_callback(app):
     @app.callback(
         [
             Output('arc1-size-display', 'children'),
@@ -99,11 +98,13 @@ def register_graph_callback(app):
             Input('slider-x-inicial', 'value'),
             Input('slider-xb-inicial', 'value'),
             Input('slider-num-iteracoes', 'value'),
+            Input('slider-xb-container', 'style'),
+            Input('arc1-size-display', 'children'),
             Input('plot-selector', 'value'),
         ],
         prevent_initial_call=False,
     )
-    def update_grafico_callback(x_inicial, xb_inicial, num_iteracoes, selected_option='All'):
+    def update_grafico_callback(x_inicial, xb_inicial, num_iteracoes, _arc_display, _arc_size, selected_option='All'):
         if(df.arco_ativo == True):
             xb_inicial = x_inicial + df.arco_tamanho   
         return update.update_grafico(x_inicial, xb_inicial, num_iteracoes, selected_option)

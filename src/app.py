@@ -31,11 +31,11 @@ def display_page(pathname):
     elif pathname == '/sandbox_page':
         layout = pages.sandbox_page_layout()
     else:
-        layout = '404 - Página não encontrada'
+        layout = '404 - Page not found'
     return layout
 
 cb.register_activate_arc_callback(app)
-cb.reister_arc_size(app)
+cb.reister_arc_size_callback(app)
 cb.register_graph_callback(app)
 cb.register_auto_slider_callback(app)
 cb.register_enter_step_callback(app)

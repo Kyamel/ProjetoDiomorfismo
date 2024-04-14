@@ -1,5 +1,5 @@
 from dash import html, dcc
-import definicoes as df
+import definitions as df
 import sistemasDinamicos as sd
 
 blank = html.Div([
