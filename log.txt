@@ -5144,3 +5144,262 @@ valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.15333883029359124
 ##################################################
 
 >>>>>> PROCESS TERMINATED at 2024-04-14 20:32:48. PROCESS TIME: 0:03:25.996888 <<<<<<
+
+>>>>>> INITIALIZING PROCESS at 2024-04-14 20:47:53 <<<<<<
+valor inicial do Ponto A (grafico 1) : 0
+valor inicial do Ponto A (grafico 2) : 0
+valor da 0 iteracao do <class 'str'>: 0
+valor da 0 iteracao do <class 'str'>: 0
+valor inicial do Ponto B (grafico 1) : 0
+valor inicial do Ponto B (grafico 2) : 0
+valor da 0 iteracao do <class 'str'>: 0
+valor da 0 iteracao do <class 'str'>: 0
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(1.0, 0.0)]
+##################################################
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(1.0, 0.0)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 0
+valor da 0 iteracao do <class 'str'>: 0
+valor inicial do Ponto B (grafico 1) : 0
+valor inicial do Ponto A (grafico 2) : 0
+valor da 0 iteracao do <class 'str'>: 0
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(1.0, 0.0)]
+##################################################
+valor inicial do Ponto B (grafico 2) : 0
+valor da 0 iteracao do <class 'str'>: 0
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(1.0, 0.0)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 0
+valor da 0 iteracao do <class 'str'>: 0
+valor inicial do Ponto B (grafico 1) : 1
+valor da 0 iteracao do <class 'str'>: 1
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(0.7379109591942707, 0.4031225942908498)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2
+valor da 0 iteracao do <class 'str'>: 2
+valor inicial do Ponto B (grafico 1) : 3
+valor da 0 iteracao do <class 'str'>: 3
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.6736376490061261, 0.5032223440670066)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 0
+valor da 0 iteracao do <class 'str'>: 0
+valor inicial do Ponto B (grafico 2) : 1
+valor da 0 iteracao do <class 'str'>: 1
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(0.7379109591942707, 0.4031225942908498)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 1.784
+valor da 0 iteracao do <class 'str'>: 1.784
+valor inicial do Ponto B (grafico 2) : 2.784
+valor da 0 iteracao do <class 'str'>: 2.784
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.5501312578690642, 0.6359056603319359)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2
+valor da 0 iteracao do <class 'str'>: 2
+valor inicial do Ponto B (grafico 1) : 0
+valor da 0 iteracao do <class 'str'>: 0
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.1719835654857272, -0.2678485334011637)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 2.433
+valor da 0 iteracao do <class 'str'>: 2.433
+valor inicial do Ponto B (grafico 2) : 3.433
+valor da 0 iteracao do <class 'str'>: 3.433
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.8226183288263954, 0.17412494021725397)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 2.433
+valor da 0 iteracao do <class 'str'>: 2.433
+valor inicial do Ponto B (grafico 2) : 0
+valor da 0 iteracao do <class 'str'>: 0
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.13433980102696297, -0.3631738232162191)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 2.4829999999999997
+valor da 0 iteracao do <class 'str'>: 2.4829999999999997
+valor inicial do Ponto B (grafico 2) : 0.05
+valor da 0 iteracao do <class 'str'>: 0.05
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.11602078527188418, -0.36943414216115034)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 2.5329999999999995
+valor da 0 iteracao do <class 'str'>: 2.5329999999999995
+valor inicial do Ponto B (grafico 2) : 0.1
+valor da 0 iteracao do <class 'str'>: 0.1
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.0974117779760832, -0.37477106814826017)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 2.5829999999999993
+valor da 0 iteracao do <class 'str'>: 2.5829999999999993
+valor inicial do Ponto B (grafico 2) : 0.15000000000000002
+valor da 0 iteracao do <class 'str'>: 0.15000000000000002
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.07855929196641491, -0.37917126164199855)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 2.632999999999999
+valor da 0 iteracao do <class 'str'>: 2.632999999999999
+valor inicial do Ponto B (grafico 2) : 0.2
+valor da 0 iteracao do <class 'str'>: 0.2
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.05951044863971906, -0.3826237244502082)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 2.682999999999999
+valor da 0 iteracao do <class 'str'>: 2.682999999999999
+valor inicial do Ponto B (grafico 2) : 0.25
+valor da 0 iteracao do <class 'str'>: 0.25
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.04031286018386608, -0.38511982721387594)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 2.7329999999999988
+valor da 0 iteracao do <class 'str'>: 2.7329999999999988
+valor inicial do Ponto B (grafico 2) : 0.3
+valor da 0 iteracao do <class 'str'>: 0.3
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.021014510572085827, -0.3866533309760375)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 2.7329999999999988
+valor da 0 iteracao do <class 'str'>: 2.7329999999999988
+valor inicial do Ponto B (grafico 2) : 0.3
+valor da 0 iteracao do <class 'str'>: 0.3
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.021014510572085827, -0.3866533309760375)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 3.7329999999999988
+valor da 0 iteracao do <class 'str'>: 3.7329999999999988
+valor inicial do Ponto B (grafico 2) : 1.3
+valor da 0 iteracao do <class 'str'>: 1.3
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(0.31400337067687134, -0.226592787204299)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 4.732999999999999
+valor da 0 iteracao do <class 'str'>: 4.732999999999999
+valor inicial do Ponto B (grafico 2) : 2.3
+valor da 0 iteracao do <class 'str'>: 2.3
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(0.3603280010262492, 0.14179612013689474)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 5.732999999999999
+valor da 0 iteracao do <class 'str'>: 5.732999999999999
+valor inicial do Ponto B (grafico 2) : 3.3
+valor da 0 iteracao do <class 'str'>: 3.3
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(0.07536872896980863, 0.37981832855053876)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 0
+valor da 0 iteracao do <class 'str'>: 0
+valor inicial do Ponto B (grafico 2) : 4.3
+valor da 0 iteracao do <class 'str'>: 4.3
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.17276454964844257, 0.26415349927869075)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 1
+valor da 0 iteracao do <class 'str'>: 1
+valor inicial do Ponto B (grafico 2) : 5.3
+valor da 0 iteracao do <class 'str'>: 5.3
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.31562258972581614, -0.00265361096915311)]
+##################################################
+valor inicial do Ponto A (grafico 2) : 1
+valor da 0 iteracao do <class 'str'>: 1
+valor inicial do Ponto B (grafico 2) : 5.3
+valor da 0 iteracao do <class 'str'>: 5.3
+valores no hiperespaco dos Pontos (Grafico 2): MultiPoints[(-0.31562258972581614, -0.00265361096915311)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2
+valor da 0 iteracao do <class 'str'>: 2
+valor inicial do Ponto B (grafico 1) : 3
+valor da 0 iteracao do <class 'str'>: 3
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.6736376490061261, 0.5032223440670066)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.05
+valor da 0 iteracao do <class 'str'>: 2.05
+valor inicial do Ponto B (grafico 1) : 3.05
+valor da 0 iteracao do <class 'str'>: 3.05
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.6979464120716342, 0.4689255970867088)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.0999999999999996
+valor da 0 iteracao do <class 'str'>: 2.0999999999999996
+valor inicial do Ponto B (grafico 1) : 3.0999999999999996
+valor da 0 iteracao do <class 'str'>: 3.0999999999999996
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.7205106725904271, 0.43345678032542534)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.1499999999999995
+valor da 0 iteracao do <class 'str'>: 2.1499999999999995
+valor inicial do Ponto B (grafico 1) : 3.1499999999999995
+valor da 0 iteracao do <class 'str'>: 3.1499999999999995
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.7412740316624485, 0.3969045473532558)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.1999999999999993
+valor da 0 iteracao do <class 'str'>: 2.1999999999999993
+valor inicial do Ponto B (grafico 1) : 3.1999999999999993
+valor da 0 iteracao do <class 'str'>: 3.1999999999999993
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.7601845917033677, 0.35936025971659424)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.249999999999999
+valor da 0 iteracao do <class 'str'>: 2.249999999999999
+valor inicial do Ponto B (grafico 1) : 3.249999999999999
+valor da 0 iteracao do <class 'str'>: 3.249999999999999
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.7771950861615102, 0.3209177585818473)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.299999999999999
+valor da 0 iteracao do <class 'str'>: 2.299999999999999
+valor inicial do Ponto B (grafico 1) : 3.299999999999999
+valor da 0 iteracao do <class 'str'>: 3.299999999999999
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.7922629976596253, 0.28167313018138346)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.3499999999999988
+valor da 0 iteracao do <class 'str'>: 2.3499999999999988
+valor inicial do Ponto B (grafico 1) : 3.3499999999999988
+valor da 0 iteracao do <class 'str'>: 3.3499999999999988
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.8053506642661841, 0.24172446564799735)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.3999999999999986
+valor da 0 iteracao do <class 'str'>: 2.3999999999999986
+valor inicial do Ponto B (grafico 1) : 3.3999999999999986
+valor da 0 iteracao do <class 'str'>: 3.3999999999999986
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.8164253736305962, 0.201171615838158)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.4499999999999984
+valor da 0 iteracao do <class 'str'>: 2.4499999999999984
+valor inicial do Ponto B (grafico 1) : 3.4499999999999984
+valor da 0 iteracao do <class 'str'>: 3.4499999999999984
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.8254594447470468, 0.16011594175687624)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.4999999999999982
+valor da 0 iteracao do <class 'str'>: 2.4999999999999982
+valor inicial do Ponto B (grafico 1) : 3.4999999999999982
+valor da 0 iteracao do <class 'str'>: 3.4999999999999982
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.832430297142598, 0.11866006120797273)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.4999999999999982
+valor da 0 iteracao do <class 'str'>: 2.4999999999999982
+valor inicial do Ponto B (grafico 1) : 0.49999999999999994
+valor da 0 iteracao do <class 'str'>: 0.49999999999999994
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.022516350611806665, -0.31751251565483807)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.549999999999998
+valor da 0 iteracao do <class 'str'>: 2.549999999999998
+valor inicial do Ponto B (grafico 1) : 0.5499999999999999
+valor da 0 iteracao do <class 'str'>: 0.5499999999999999
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(-0.006619199271214262, -0.3182410561875157)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.599999999999998
+valor da 0 iteracao do <class 'str'>: 2.599999999999998
+valor inicial do Ponto B (grafico 1) : 0.6
+valor da 0 iteracao do <class 'str'>: 0.6
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(0.00929449662034383, -0.31817415981646285)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.6499999999999977
+valor da 0 iteracao do <class 'str'>: 2.6499999999999977
+valor inicial do Ponto B (grafico 1) : 0.65
+valor da 0 iteracao do <class 'str'>: 0.65
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(0.025184961110831617, -0.3173119937477679)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.6999999999999975
+valor da 0 iteracao do <class 'str'>: 2.6999999999999975
+valor inicial do Ponto B (grafico 1) : 0.7000000000000001
+valor da 0 iteracao do <class 'str'>: 0.7000000000000001
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(0.04101247631461622, -0.3156567129475953)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.7499999999999973
+valor da 0 iteracao do <class 'str'>: 2.7499999999999973
+valor inicial do Ponto B (grafico 1) : 0.7500000000000001
+valor da 0 iteracao do <class 'str'>: 0.7500000000000001
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(0.056737481686498746, -0.3132124547558919)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.799999999999997
+valor da 0 iteracao do <class 'str'>: 2.799999999999997
+valor inicial do Ponto B (grafico 1) : 0.8000000000000002
+valor da 0 iteracao do <class 'str'>: 0.8000000000000002
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(0.07232067290247492, -0.30998532854519223)]
+##################################################
+valor inicial do Ponto A (grafico 1) : 2.799999999999997
+valor da 0 iteracao do <class 'str'>: 2.799999999999997
+valor inicial do Ponto B (grafico 1) : 0.8000000000000002
+valor da 0 iteracao do <class 'str'>: 0.8000000000000002
+valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(0.07232067290247492, -0.30998532854519223)]
+##################################################

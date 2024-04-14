@@ -3,23 +3,12 @@ import numpy as np
 import plotly.graph_objects as go
 import cameloMath as cm
 import definitions as df
-<<<<<<< HEAD
 from typing import Tuple
-=======
->>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
 
 # Função para gerar os dados do gráfico
 def gerar_dados_2(x_inicial: float,
                 xb_inicial: float, 
-<<<<<<< HEAD
                 num_iteracoes: int) -> Tuple[go.Scatter, ...]:
-=======
-                num_iteracoes: int) -> tuple[go.Scatter, go.Scatter,
-                                            go.Scatter, go.Scatter,
-                                            go.Scatter, go.Scatter,
-                                            go.Scatter, go.Scatter,
-                                            go.Scatter, go.Scatter]:
->>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     
     X1 = np.linspace(0.0, np.pi, 50, endpoint=True)
     X2 = np.linspace(np.pi, 2 * np.pi, 50, endpoint=True)
@@ -38,7 +27,6 @@ def gerar_dados_2(x_inicial: float,
     if num_iteracoes >= 0:
         trace_f1 = go.Scatter(x=X1, y=Y1, name='f1(x)', line=dict(color=df.col_func))
         trace_f2 = go.Scatter(x=X2, y=Y2, name='f2(x)', line=dict(color=df.col_func))
-<<<<<<< HEAD
         inputs_a, outputs_a, xc_a, yc_a, labels = sd.iteracoes(x_inicial, num_iteracoes, sd.f1, sd.f2, 'Ponto A (grafico 2)')
         inputs_b, outputs_b, xc_b, yc_b, labels = sd.iteracoes(xb_inicial, num_iteracoes, sd.f1, sd.f2, 'Ponto B (grafico 2)')
     else:
@@ -60,34 +48,6 @@ def gerar_dados_2(x_inicial: float,
              trace_segmentos_b, trace_points_a, trace_points_b, trace_hiperespaco, trace_arc]
 
 def gerar_dados(x2_inicial: float, xb2_inicial: float, num_iteracoes_2: int) ->  Tuple[go.Scatter,...]:
-=======
-        inputs_a, outputs_a, xc_a, yc_a, labels = sd.iteracoes(x_inicial, num_iteracoes, sd.f1, sd.f2, 'Ponto A (gráfico 2)')
-        inputs_b, outputs_b, xc_b, yc_b, labels = sd.iteracoes(xb_inicial, num_iteracoes, sd.f1, sd.f2, 'Ponto B (gráfico 2)')
-    else:
-        trace_f1 = go.Scatter(x=X1, y=Y_inv1, name='f1(x)', line=dict(color=df.col_func))
-        trace_f2 = go.Scatter(x=X2, y=Y_inv2, name='f2(x)', line=dict(color=df.col_func))
-        inputs_a, outputs_a, xc_a, yc_a, labels = sd.iteracoes(x_inicial, num_iteracoes, sd.inverse_f1, sd.inverse_f2, 'Ponto A (gráfico 2)')
-        inputs_b, outputs_b, xc_b, yc_b, labels = sd.iteracoes(xb_inicial, num_iteracoes, sd.inverse_f1, sd.inverse_f2, 'Ponto B (gráfico 2)')
-
-    trace_yx, trace_circle, trace_segmentos_a, trace_segmentos_b, trace_points_a, trace_points_b, trace_hiperespaco = makeTraces(X, labels, inputs_a, inputs_b, outputs_a, outputs_b, xc_a, xc_b, yc_a, yc_b, '(Gráfico 2)')
-
-    if df.arco_ativo:
-        draw_arc = np.linspace(x_inicial, xb_inicial, 1000, endpoint=True)
-        trace_arc = go.Scatter(x=np.cos(draw_arc), y=np.sin(draw_arc),
-                                mode='lines', name='arc', marker=dict(color=df.col_value_A))
-    else:
-        draw_arc = []
-        trace_arc = go.Scatter(x=[], y=[], name='arc')
-
-    return [trace_f1, trace_f2, trace_yx, trace_circle, trace_segmentos_a,
-             trace_segmentos_b, trace_points_a, trace_points_b, trace_hiperespaco, trace_arc]
-
-def gerar_dados(x2_inicial: float, xb2_inicial: float, num_iteracoes_2: int) ->  tuple[go.Scatter, go.Scatter,
-                                                                                        go.Scatter, go.Scatter,
-                                                                                        go.Scatter, go.Scatter,
-                                                                                        go.Scatter, go.Scatter,
-                                                                                        go.Scatter]:
->>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     X = np.linspace(0.0, 2 * np.pi, 100, endpoint=True)
     Y = sd.f3(X)
     Y_inv = np.empty_like(Y)
@@ -96,7 +56,6 @@ def gerar_dados(x2_inicial: float, xb2_inicial: float, num_iteracoes_2: int) -> 
 
     if num_iteracoes_2 >= 0:
         trace_f1 = go.Scatter(x=X, y=Y, name='f1(x)', line=dict(color=df.col_func))
-<<<<<<< HEAD
         inputs_a, outputs_a, xc_a, yc_a, labels = sd.iteracoes(x2_inicial, num_iteracoes_2, sd.f3, sd.f3, 'Ponto A (grafico 1)')
         inputs_b, outputs_b, xc_b, yc_b, labels = sd.iteracoes(xb2_inicial, num_iteracoes_2, sd.f3, sd.f3, 'Ponto B (grafico 1)')
     else:
@@ -105,26 +64,12 @@ def gerar_dados(x2_inicial: float, xb2_inicial: float, num_iteracoes_2: int) -> 
         inputs_b, outputs_b, xc_b, yc_b, labels = sd.iteracoes(xb2_inicial, num_iteracoes_2, sd.inverse_f3, sd.inverse_f3, 'Ponto B (grafico 1)')
 
     trace_yx, trace_circle, trace_segmentos_a, trace_segmentos_b, trace_points_a, trace_points_b, trace_hiperespaco = makeTraces(X, labels, inputs_a, inputs_b, outputs_a, outputs_b, xc_a, xc_b, yc_a, yc_b, '(Grafico 1)')
-=======
-        inputs_a, outputs_a, xc_a, yc_a, labels = sd.iteracoes(x2_inicial, num_iteracoes_2, sd.f3, sd.f3, 'Ponto A (gráfico 1)')
-        inputs_b, outputs_b, xc_b, yc_b, labels = sd.iteracoes(xb2_inicial, num_iteracoes_2, sd.f3, sd.f3, 'Ponto B (gráfico 1)')
-    else:
-        trace_f1 = go.Scatter(x=X, y=Y_inv, name='f1_inv(x)', line=dict(color=df.col_func))
-        inputs_a, outputs_a, xc_a, yc_a, labels = sd.iteracoes(x2_inicial, num_iteracoes_2, sd.inverse_f3, sd.inverse_f3, 'Ponto A (gráfico 1)')
-        inputs_b, outputs_b, xc_b, yc_b, labels = sd.iteracoes(xb2_inicial, num_iteracoes_2, sd.inverse_f3, sd.inverse_f3, 'Ponto B (gráfico 1)')
-
-    trace_yx, trace_circle, trace_segmentos_a, trace_segmentos_b, trace_points_a, trace_points_b, trace_hiperespaco = makeTraces(X, labels, inputs_a, inputs_b, outputs_a, outputs_b, xc_a, xc_b, yc_a, yc_b, '(Gráfico 1)')
->>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     # Draw Arc
     if df.arco_ativo:
         draw_arc = np.linspace(x2_inicial, xb2_inicial, 1000, endpoint=True)
         trace_arc = go.Scatter(x=np.cos(draw_arc), y=np.sin(draw_arc),
                                 mode='lines', name='arc', marker=dict(color=df.col_value_A))
     else:
-<<<<<<< HEAD
-=======
-        draw_arc = []
->>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
         trace_arc = go.Scatter(x=[], y=[], name='arc')
 
     return [trace_f1, trace_yx, trace_circle, trace_segmentos_a, trace_segmentos_b,
@@ -133,15 +78,7 @@ def gerar_dados(x2_inicial: float, xb2_inicial: float, num_iteracoes_2: int) -> 
 def gerar_dados_user(xu_inicial: float,
                     xbu_inicial: float,
                     num_iteracoes_u: int,
-<<<<<<< HEAD
                     func) ->  Tuple[go.Scatter, ...]:
-=======
-                    func) ->  tuple[go.Scatter, go.Scatter,
-                                    go.Scatter, go.Scatter,
-                                    go.Scatter, go.Scatter,
-                                    go.Scatter, go.Scatter,
-                                    go.Scatter]:
->>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     
     X = np.linspace(0.0, 2 * np.pi, 100, endpoint=True)
     Y = sd.CalculateUserFunc(X, func)
@@ -151,7 +88,6 @@ def gerar_dados_user(xu_inicial: float,
 
     if num_iteracoes_u >= 0:
         trace_f1 = go.Scatter(x=X, y=Y, name='f1(x)')
-<<<<<<< HEAD
         inputs_a, outputs_a, xc_a, yc_a, labels = sd.iteracoes(xu_inicial, num_iteracoes_u, sd.UserFunc(func), sd.UserFunc(func), 'Ponto A (grafico user)')
         inputs_b, outputs_b, xc_b, yc_b, labels = sd.iteracoes(xbu_inicial, num_iteracoes_u, sd.UserFunc(func), sd.UserFunc(func), 'Ponto B (grafico user)')
     else:
@@ -162,27 +98,10 @@ def gerar_dados_user(xu_inicial: float,
     trace_yx, trace_circle, trace_segmentos_a, trace_segmentos_b, trace_points_a, trace_points_b, trace_hiperespaco = makeTraces(X, labels, inputs_a, inputs_b, outputs_a, outputs_b, xc_a, xc_b, yc_a, yc_b, '(Grafico user)')
     # Draw Arc
     if df.arco_ativo_u:
-=======
-        inputs_a, outputs_a, xc_a, yc_a, labels = sd.iteracoes(xu_inicial, num_iteracoes_u, sd.UserFunc(func), sd.UserFunc(func), 'Ponto A (gráfico user)')
-        inputs_b, outputs_b, xc_b, yc_b, labels = sd.iteracoes(xbu_inicial, num_iteracoes_u, sd.UserFunc(func), sd.UserFunc(func), 'Ponto B (gráfico user)')
-    else:
-        trace_f1 = go.Scatter(x=X, y=Y_inv, name='f1_inv(x)')
-        inputs_a, outputs_a, xc_a, yc_a, labels = sd.iteracoes(xu_inicial, num_iteracoes_u, sd.inverse_UserFunc(func, 1), sd.inverse_UserFunc(func, 1), 'Ponto A (gráfico user)')
-        inputs_b, outputs_b, xc_b, yc_b, labels = sd.iteracoes(xbu_inicial, num_iteracoes_u, sd.inverse_UserFunc(func, 1), sd.inverse_UserFunc(func, 1), 'Ponto B (gráfico user)')
-
-    trace_yx, trace_circle, trace_segmentos_a, trace_segmentos_b, trace_points_a, trace_points_b, trace_hiperespaco = makeTraces(X, labels, inputs_a, inputs_b, outputs_a, outputs_b, xc_a, xc_b, yc_a, yc_b, '(Gráfico user)')
-
-     # Draw Arc
-    if df.arco_ativo:
->>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
         draw_arc = np.linspace(xu_inicial, xbu_inicial, 1000, endpoint=True)
         trace_arc = go.Scatter(x=np.cos(draw_arc), y=np.sin(draw_arc),
                                 mode='lines', name='arc', marker=dict(color=df.col_value_A))
     else:
-<<<<<<< HEAD
-=======
-        draw_arc = []
->>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
         trace_arc = go.Scatter(x=[], y=[], name='arc')
 
     return [trace_f1, trace_yx, trace_circle, trace_segmentos_a, trace_segmentos_b,
@@ -193,11 +112,7 @@ def makeTraces(X: np.ndarray, labels: list[str],
                outputs_a: np.ndarray, outputs_b: np.ndarray, 
                xc_a: np.ndarray, xc_b: np.ndarray, 
                yc_a: np.ndarray, yc_b: np.ndarray, 
-<<<<<<< HEAD
                str: str = 'graph') -> Tuple[go.Scatter, ...]:
-=======
-               str: str = 'graph') -> tuple[go.Scatter, go.Scatter, go.Scatter, go.Scatter, go.Scatter, go.Scatter, go.Scatter]:
->>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     
     trace_yx = go.Scatter(x=X, y=X, name='y=x', line=dict(color=df.col_identity))
     trace_circle = go.Scatter(x=np.cos(X), y=np.sin(X), name='circle', line=dict(color=df.col_circle))
@@ -224,14 +139,8 @@ def makeTraces(X: np.ndarray, labels: list[str],
 
     # Criar array para arc
     arc = np.array([cm.ArcOfCircle(b, c, e) for b, c, e in zip(begin_point, center_point, end_point)])
-<<<<<<< HEAD
     hiperespaco = sd.hiperespaco(arc, string=str)
 
     trace_hiperespaco = go.Scatter(x=hiperespaco.x, y=hiperespaco.y, mode='markers',name='2D', marker=dict(color=df.col_hiperspace), text=labels)
 
-=======
-    hiperespaco = sd.hiperespaco(arc, str=str)
-    trace_hiperespaco = go.Scatter(x=hiperespaco.x, y=hiperespaco.y, mode='markers',name='2D', marker=dict(color=df.col_hiperspace), text=labels)
-
->>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     return trace_yx, trace_circle, trace_segmentos_a, trace_segmentos_b, trace_points_a, trace_points_b, trace_hiperespaco
