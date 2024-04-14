@@ -1,9 +1,14 @@
 from graph_data import gerar_dados, gerar_dados_2, gerar_dados_user, go
 import definitions as df
+<<<<<<< HEAD
 from typing import Tuple
 from typing import Callable
 
 def selectTraces(dados: Tuple[go.Figure, ...], selected_option: str) -> Tuple[Tuple[go.Figure, ...], Tuple[float, float]]:
+=======
+
+def selectTraces(dados: tuple, selected_option: str) -> tuple[tuple, tuple]:
+>>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     range = df.all_scale
     if selected_option == 'circle':
         range = df.circle_scale
@@ -62,6 +67,10 @@ def update_grafico(x2_inicial: float, xb2_inicial: float, num_iteracoes_2: int, 
         )
     )                     
     return figura
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     
 def update_grafico_2(x_inicial: float, xb_inicial: float, num_iteracoes: int, selected_option='All') -> go.Figure:
     dados = gerar_dados_2(x_inicial, xb_inicial, num_iteracoes)
@@ -85,7 +94,11 @@ def update_grafico_2(x_inicial: float, xb_inicial: float, num_iteracoes: int, se
     )                    
     return figura
 
+<<<<<<< HEAD
 def update_grafico_u(x_inicial: float, xb_inicial: float, num_iteracoes: float, func: Callable[[float], float], selected_option='All') -> go.Figure:
+=======
+def update_grafico_u(x_inicial: float, xb_inicial: float, num_iteracoes: float, func, selected_option='All') -> go.Figure:
+>>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     dados = gerar_dados_user(x_inicial, xb_inicial, num_iteracoes, func)
     dados, range = selectTraces(dados, selected_option)
     figura = go.Figure(data=dados, 
@@ -107,7 +120,12 @@ def update_grafico_u(x_inicial: float, xb_inicial: float, num_iteracoes: float, 
     )                    
     return figura
 
+<<<<<<< HEAD
 def auto_update_sliders(auto_update_value: str, _, x: float, xb: float) -> Tuple[float, float, bool]:
+=======
+def update_sliders(auto_update_value: str, _, x: float, xb: float) -> tuple[float, float, bool]:
+
+>>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     if 'auto-update' in auto_update_value:
         # Lógica para atualizar gradualmente os valores dos sliders
         max_value = df.slider_max_value
@@ -131,7 +149,11 @@ def auto_update_sliders(auto_update_value: str, _, x: float, xb: float) -> Tuple
     else:
         return x, xb, True
 
+<<<<<<< HEAD
 def auto_update_sliders_2(auto_update_value: str, _, x: float, xb: float) -> Tuple[float, float, bool]:
+=======
+def update_sliders_2(auto_update_value: str, _, x: float, xb: float) -> tuple[float, float, bool]:
+>>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     if 'auto-update' in auto_update_value:
         # Lógica para atualizar gradualmente os valores dos sliders
         max_value = df.slider_max_value
@@ -155,7 +177,11 @@ def auto_update_sliders_2(auto_update_value: str, _, x: float, xb: float) -> Tup
     else:
         return x, xb, True
     
+<<<<<<< HEAD
 def auto_update_sliders_u(auto_update_value: str, _, x: float, xb: float) -> Tuple[float, float, bool]:
+=======
+def update_sliders_u(auto_update_value: str, _, x: float, xb: float) -> tuple[float, float, bool]:
+>>>>>>> 4ccc8c56a3df9ebcb7791dc893b2fac5884d1a38
     if 'auto-update' in auto_update_value:
         # Lógica para atualizar gradualmente os valores dos sliders
         max_value = df.slider_max_value
