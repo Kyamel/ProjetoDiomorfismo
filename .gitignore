@@ -1,1 +1,4 @@
 log.txt
+squarecloud.app
+.venv
+src/__pycache__
