@@ -5403,3 +5403,5 @@ valor inicial do Ponto B (grafico 1) : 0.8000000000000002
 valor da 0 iteracao do <class 'str'>: 0.8000000000000002
 valores no hiperespaco dos Pontos (Grafico 1): MultiPoints[(0.07232067290247492, -0.30998532854519223)]
 ##################################################
+
+>>>>>> PROCESS TERMINATED at 2024-04-14 20:49:47. PROCESS TIME: 0:01:53.598017 <<<<<<
