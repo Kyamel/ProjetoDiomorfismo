@@ -1,7 +1,7 @@
 dash = "2.16.1" #Framework to create interactive web applications, particularly for building dashboards
 plotly = "5.20.0" #Graphing library used by Dash for creating and displaying interactive data visualizations
+flask = "3.0.3" #Web framework in Python used by Dash as the underlying WSGI server, responsible for URL routing, HTTP request handling, and HTML template rendering
 numpy = "1.26.4" #Fundamental library for numerical computing in Python, used for array manipulation and mathematical operations
 gunicorn = "21.2.0" #WSGI HTTP server for Python applications, often used for deploying web applications in production environments
 scipy = "1.13.0" #Library for scientific computing in Python, providing functionalities for mathematical operations, statistics, optimization, etc.
 sympy = "1.12" #Library for symbolic mathematics in Python, enabling manipulation of mathematical expressions symbolically
-flask = "3.0.3" #Web framework in Python used by Dash as the underlying WSGI server, responsible for URL routing, HTTP request handling, and HTML template rendering
