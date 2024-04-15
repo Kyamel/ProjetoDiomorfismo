@@ -105,7 +105,7 @@ def iteracoes(x: float,
     outputs = outputs[:-1]
 
     with open('log.txt', 'a') as file:
-        file.write(f"valor da {numero_iteracoes} iteracao do {str}: {x}\n")
+        file.write(f"valor da {numero_iteracoes} iteracao do {string}: {x}\n")
 
     return inputs, outputs, xc, yc, labels
 
